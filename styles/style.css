@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'sajat';
+    src: url('../assets/Font.ttf');
+}
+
+body {
+    background: black;
+    font-family: 'sajat', sans-serif;
+}
+
+.playDiv {
+    display: grid;
+    place-items: center;
+    height: auto;
+}
+
+#playButton {
+    font-family: 'sajat', sans-serif;
+    font-size: xx-large;
+    color: black;
+    padding: 30px;
+}
