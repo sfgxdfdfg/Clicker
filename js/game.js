@@ -5,6 +5,7 @@ const SaveButton = document.getElementById("saveButton");
 const ClearButton = document.getElementById("clearButton");
 const audioButton = document.getElementById("audioButton");
 const menuBackButton = document.getElementById("menuBackButton");
+const music = new Audio("assets/music.mp3");
 SaveButton?.addEventListener("click", function () {
     localStorage.setItem("points", localPoints.toString());
 });
@@ -30,15 +31,14 @@ ScoreButton?.addEventListener("click", function () {
 ShopButton?.addEventListener("click", function () {
     window.location.replace("shop.html");
 });
-function music() {
+function music_play() {
     console.log("Playing");
-    const music = new Audio("assets/music.mp3");
     console.log(music);
     music.muted = false;
     music.play().then(() => console.log("Success"));
 }
 audioButton?.addEventListener("click", function () {
-    music();
+    music_play();
     audioButton.textContent = "Music: ON";
     audioButton.disabled = true;
 });

@@ -1,6 +1,5 @@
 const audioShopButton = document.getElementById("audioShopButton") as HTMLButtonElement;
 const backButton = document.getElementById("backButton");
-
 const buy1 = document.getElementById("buy1");
 const buy2 = document.getElementById("buy2");
 const buy3 = document.getElementById("buy3");
@@ -13,7 +12,7 @@ if (!audioShopButton || !buy1 || !buy2 || !buy3 || !backButton) {
     throw new Error("ERROR");
 }
 
-function music_play() {
+function music_play_shop() {
     console.log("Playing");
     console.log(music_shop);
     if (music_shop.paused) {
@@ -30,12 +29,14 @@ function effect_buy() {
 }
 
 audioShopButton?.addEventListener("click", function() {
-    music_play();
+    music_play_shop();
     audioShopButton.textContent = "Music: ON";
     audioShopButton.disabled = true;
 });
 
-buy1.addEventListener("click", effect_buy);
+buy1.addEventListener("click", function() {
+    effect_buy();
+});
 
 backButton.addEventListener("click", function() {
     window.location.replace("game.html")

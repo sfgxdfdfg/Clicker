@@ -8,7 +8,7 @@ const effect = new Audio("assets/kaching.mp3");
 if (!audioShopButton || !buy1 || !buy2 || !buy3 || !backButton) {
     throw new Error("ERROR");
 }
-function music_play() {
+function music_play_shop() {
     console.log("Playing");
     console.log(music_shop);
     if (music_shop.paused) {
@@ -23,11 +23,13 @@ function effect_buy() {
     effect.play().then(() => console.log("Success"));
 }
 audioShopButton?.addEventListener("click", function () {
-    music_play();
+    music_play_shop();
     audioShopButton.textContent = "Music: ON";
     audioShopButton.disabled = true;
 });
-buy1.addEventListener("click", effect_buy);
+buy1.addEventListener("click", function () {
+    effect_buy();
+});
 backButton.addEventListener("click", function () {
     window.location.replace("game.html");
 });
